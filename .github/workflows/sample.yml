@@ -16,5 +16,6 @@ jobs:
       - name: test
         run: |
           chmod o+rw .
+          chmod g+rw .
           docker-compose up -d test
           docker-compose run --rm test bash -c 'ls -ld .; mkdir subtest; echo $?'
