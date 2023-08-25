@@ -8,12 +8,12 @@ on:
 
 jobs:
   print-hello-world:
-  runs-on: ubuntu-latest
-  steps:
-    - name: execute echo command
-      run: echo "Hello World!"
-    - name: test
-      run: |
-        chmod o+rw .
-        docker-compose up -d test
-        docker-compose run --rm test bash -c 'ls -ld .; mkdir subtest; echo $?'
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute echo command
+        run: echo "Hello World!"
+      - name: test
+        run: |
+          chmod o+rw .
+          docker-compose up -d test
+          docker-compose run --rm test bash -c 'ls -ld .; mkdir subtest; echo $?'
