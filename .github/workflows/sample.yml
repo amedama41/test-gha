@@ -15,6 +15,7 @@ jobs:
         run: echo "Hello World!"
       - name: test
         run: |
-          chmod o+rw .
+          id
+          ls -ld .
           docker-compose up -d test
-          docker-compose run --rm test bash -c 'ls -ld .; mkdir subtest; echo $?'
+          docker-compose run --rm test bash -c 'id; ls -ld .; mkdir subtest; echo $?'
